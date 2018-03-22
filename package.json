@@ -1,0 +1,19 @@
+{
+  "name": "reminder-parser",
+  "version": "0.1.0",
+  "description": "Parses a request for a reminder into the time it is due and the note to be reminded as well as for whom the reminder is for",
+  "main": "index.js",
+  "scripts": {
+    "compile": "nearleyc reminders.ne -o reminders.js",
+    "nearly-test": "nearley-test -i \"remind me to go to the store by eod\" reminders.js",
+    "test": "mocha --reporter spec"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4",
+    "moment": "^2.21.0",
+    "nearley": "^2.13.0"
+  }
+}
