@@ -346,7 +346,7 @@ var grammar = {
     {"name": "three$subexpression$1$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
     {"name": "three$subexpression$1$subexpression$2", "symbols": [/[fF]/, /[eE]/, /[wW]/], "postprocess": function (d) {return d.join(""); }},
     {"name": "three$subexpression$1", "symbols": ["three$subexpression$1$ebnf$1", "three$subexpression$1$subexpression$2"]},
-    {"name": "three", "symbols": ["three$subexpression$1", "__"], "postprocess": d => 2},
+    {"name": "three", "symbols": ["three$subexpression$1", "__"], "postprocess": d => 3},
     {"name": "inc_dec_period", "symbols": ["seconds"]},
     {"name": "inc_dec_period", "symbols": ["minutes"]},
     {"name": "inc_dec_period", "symbols": ["hours"]},

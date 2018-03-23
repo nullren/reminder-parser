@@ -155,7 +155,7 @@ scaled_period     -> inc_dec_number _ inc_dec_period  {% d => d[0] * d[2] %}
 inc_dec_number    -> decimal | one | two | three            {% d => d[0] %}
 one               -> ("one"i | "a"i | "an"i) __             {% d => 1 %}
 two               -> ("two"i | ("a"i __):? "couple"i) __    {% d => 2 %}
-three             -> ("three"i | ("a"i __):? "few"i) __     {% d => 2 %}
+three             -> ("three"i | ("a"i __):? "few"i) __     {% d => 3 %}
 
 inc_dec_period    -> seconds | minutes | hours | days | weeks | fortnight {% d => d[0] %}
 
