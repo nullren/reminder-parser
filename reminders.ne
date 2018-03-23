@@ -64,7 +64,7 @@ dosomething       -> words {% d => d[0] %}
 
 ## Date/Duration math
 time_expr         -> ("at"i __|"on"i __):? timespec        {% d => d[1] %}
-                   | "in"i __ scaled_period                {% d => adds(moment(), d[2]) %}
+                   | ("in"i|"after"i) __ scaled_period                {% d => adds(moment(), d[2]) %}
                    | scaled_period add time_expr           {% d => adds(d[2], d[0]) %}
                    | time_expr add scaled_period           {% d => adds(d[0], d[2]) %}
                    | scaled_period subtract time_expr      {% d => subs(d[2], d[0]) %}
