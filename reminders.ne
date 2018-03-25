@@ -55,9 +55,9 @@ const subs = (m, s) => m.clone().subtract(moment.duration(s, 'seconds'))
 
 ## Each rule returns a list of possible parsings. Order of the rules matters in ambiguous cases.
 
-reminderspec      -> "remind"i __ someone __ "to"i __ dosomething __ time_expr {% d => combine(d[2], d[6], d[8]) %}
-                   | "remind"i __ someone __ time_expr ",":? __ "to"i __ dosomething {% d => combine(d[2], d[9], d[4]) %}
-                   | time_expr ",":? __ "remind"i __ someone __ "to"i __ dosomething {% d => combine(d[5], d[9], d[0]) %}
+reminderspec      -> "remind"i __ someone __ ("that"i|"to"i) __ dosomething __ time_expr {% d => combine(d[2], d[6], d[8]) %}
+                   | "remind"i __ someone __ time_expr ",":? __ ("that"i|"to"i) __ dosomething {% d => combine(d[2], d[9], d[4]) %}
+                   | time_expr ",":? __ "remind"i __ someone __ ("that"i|"to"i) __ dosomething {% d => combine(d[5], d[9], d[0]) %}
 
 someone           -> word  {% d => d[0] %}
 dosomething       -> words {% d => d[0] %}
