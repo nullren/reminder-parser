@@ -13,7 +13,7 @@
   "dependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.0.4",
-    "moment": "^2.21.0",
+    "moment": "^2.29.4",
     "nearley": "^2.13.0"
   }
 }
